@@ -1,27 +1,24 @@
-let input_one=document.querySelector("#username");
-let btn=document.querySelector("#submit");
-let check=document.querySelector("#checkbox");
-let input_two=document.querySelector("#password");
-let exist_btn=document.querySelector("#existing");
-exist_btn.style.display="none";
+let input_one = document.querySelector("#username");
+let btn = document.querySelector("#submit");
+let check = document.querySelector("#checkbox");
+let input_two = document.querySelector("#password");
+let exist_btn = document.querySelector("#existing");
 
-btn.addEventListener("click",(e)=>{
+exist_btn.style.display = "none";
 
+btn.addEventListener("click", (e) => {
 	e.preventDefault();
 	alert(`Logged in as ${input_one.value}`);
 
-if(check.checked)
-{
-	localStorage.setItem(input_two.value,input_one.value);
-	exist_btn.style.display="block";
-}
-	else{
-		localStorage.removeItem("data");
+	if (check.checked) {
+		localStorage.setItem(input_one.value, input_two.value);
+		exist_btn.style.display = "block";
 	}
-})
-exist_btn.addEventListener("click",display)
-function display()
-{
-	let d=localStorage.getItem(input_two.value);
-	alert(Logged in as ${d});
+});
+
+exist_btn.addEventListener("click", display);
+
+function display() {
+	let d = localStorage.getItem(input_one.value);
+	alert(`Password is ${d}`);
 }
