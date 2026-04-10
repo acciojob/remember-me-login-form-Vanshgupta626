@@ -1,4 +1,3 @@
-//your JS code here. If required.
 let input_one=document.querySelector("#username");
 let btn=document.querySelector("#submit");
 let check=document.querySelector("#checkbox");
@@ -9,23 +8,15 @@ exist_btn.style.display="none";
 btn.addEventListener("click",(e)=>{
 
 	e.preventDefault();
-	alert(Logged in as ${input_one.value});
-// 	let obj={
-// 	username:input_one.value,
-// 	password:input_two.value
-// }
-// let json_obj=JSON.stringify(obj);
+	alert(`Logged in as ${input_one.value}`);
+
 if(check.checked)
 {
-	//alert(Logged in as ${input_one.value});
 	localStorage.setItem(input_two.value,input_one.value);
-	// exist_btocn.id="existing";
-	// exist_btn.innerText="Login as existing user";
 	exist_btn.style.display="block";
 }
 	else{
 		localStorage.removeItem("data");
-		//alert(credentials are not stored);
 	}
 })
 exist_btn.addEventListener("click",display)
